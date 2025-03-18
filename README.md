@@ -1,70 +1,77 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🧠 CodeQuest RPG  
 
-## Available Scripts
+A **gamified learning platform** where students battle villains by solving **Python coding challenges**! With dynamic health bars, multiple difficulty levels, and epic **finisher moves**, learning code feels like an **RPG adventure**.  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tech Stack  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React (JavaScript) for UI and game logic.  
+- **Backend:** FastAPI (Python) for checking code submissions.  
+- **Database/Auth:** Supabase for user authentication and progress tracking.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Project Structure  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+/codequest-rpg
+│
+├── /frontend  (React UI)
+│   ├── components/
+│   │   ├── Login.js        # Supabase authentication  
+│   │   ├── Game.js         # Gameplay logic  
+│   │   ├── HealthBar.js    # HP tracking  
+│   │   ├── FinishScreen.js # Win/Loss + finisher move  
+│   ├── styles.css         # UI styling  
+│
+├── /backend  (FastAPI)
+│   ├── main.py            # Python code validation  
+│
+└── /supabase  
+    ├── supabaseClient.js  # Supabase setup  
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎮 How It Works  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1️⃣ **User logs in** (Supabase authentication).  
+2️⃣ **Enters battle** with a villain and gets **3 coding challenges**.  
+3️⃣ **Each correct answer** deals **1 HP damage** to the boss.  
+4️⃣ **Incorrect answers** cause the player to take damage.  
+5️⃣ **Defeat the boss** and unlock an **epic finisher move**!  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔧 Setup & Run  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Install dependencies:  
+   ```bash
+   npm install      # Install frontend packages  
+   pip install -r backend/requirements.txt  # Install backend dependencies  
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Run the backend:  
+   ```bash
+   uvicorn backend.main:app --reload  
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Run the frontend:  
+   ```bash
+   npm start  
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 🔥 Future Plans  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add **Medium & Hard modes** with tougher logic.  
+- **Leaderboard & Achievements** for player motivation.  
+- **Multiplayer coding battles** for friendly competition!  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+💡 **Built for Google Devs Sprint '25** – Turning coding into an RPG adventure!  
+```
