@@ -1,4 +1,4 @@
-import supabase from "./supabaseClient.js";
+import { supabase } from "./supabaseClient.js";
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -24,3 +24,5 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         errorMessage.textContent = "⚠️ Something went wrong, try again!";
     }
 });
+
+export default Login;

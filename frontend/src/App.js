@@ -1,32 +1,27 @@
-import { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient";
-import Game from "./Game";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Login from "./login";
+import Signup from "./signup";
+import Game from "./components/Game";
 
 function App() {
-    const [user, setUser] = useState(null);
+    const isAuthenticated = !!localStorage.getItem("user");
 
+    // Hide spinner when the app loads
     useEffect(() => {
-        const fetchUser = async () => {
-            const { data: { user } } = await supabase.auth.getUser();
-            if (!user) {
-                window.location.href = "/login_page.html";
-            } else {
-                setUser(user);
-            }
-        };
-        fetchUser();
+        const spinner = document.getElementById("loading-spinner");
+        if (spinner) spinner.style.display = "none";
     }, []);
 
-    if (!user) return <h2>Loading...</h2>;
-
     return (
-        <div className="App">
-            <h1>Welcome to PyRPG, {user.email}!</h1>
-            <Game />
-            <button onClick={() => supabase.auth.signOut().then(() => window.location.href = "/login_page.html")}>
-                Logout
-            </button>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={isAuthenticated ? <Navigate to="/game" /> : <Navigate to="/login" />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/game" element={isAuthenticated ? <Game /> : <Navigate to="/login" />} />
+            </Routes>
+        </Router>
     );
 }
 

@@ -25,3 +25,5 @@ signupForm.addEventListener('submit', async (e) => {
         window.location.href = 'login_page.html';
     }
 });
+
+export default Signup;
