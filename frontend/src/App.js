@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
+import Game from "./Game";
 
 function App() {
     const [user, setUser] = useState(null);
 
-    // Check if user is logged in
     useEffect(() => {
         const fetchUser = async () => {
             const { data: { user } } = await supabase.auth.getUser();
@@ -21,12 +21,11 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Welcome to CodeQuest RPG, {user.email}!</h1>
-            <p>Prepare for battle! Solve Python challenges to defeat the boss.</p>
+            <h1>Welcome to PyRPG, {user.email}!</h1>
+            <Game />
             <button onClick={() => supabase.auth.signOut().then(() => window.location.href = "/login_page.html")}>
                 Logout
             </button>
-            {/* Placeholder for your Game Component */}
         </div>
     );
 }
